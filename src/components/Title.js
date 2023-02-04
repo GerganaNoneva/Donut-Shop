@@ -10,7 +10,6 @@ const Title = ({ smallText, bigText }) => {
     margin:'25% auto',
     textAlign:'center',
     lineHeight: '0.75'
-
   }
 
   const smallTextStyle = {

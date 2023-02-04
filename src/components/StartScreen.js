@@ -35,15 +35,19 @@ const styleDonutDust ={
   const styleDonutTrueBlood={
     width: '70%',
     height: 'auto',
-    marginTop: '-10%',
-    marginLeft: '35%'
+    marginLeft: '30%',
+    objectFit: 'cover',
+    objectPosition: 'top 0 left 15px'
   };
+
   const styleSparkles={
     width: '500px',
     height:'auto',
     position: 'absolute',
     marginTop: '-50%',
-    marginLeft: '15%'
+    marginLeft: '15%',
+    objectFit: 'cover',
+    objectPosition: 'top 0 left 50px'
   }
 
   const styleTitle = {
@@ -56,23 +60,22 @@ const styleDonutDust ={
   background-color: white;
   font-size: 44px;
   font-family: 'Outfit-bold';
-  margin-top: 0;
+  margin-botom: 50%;
   margin-left: 25%;
+  border: none;
+  margin-top: -10%;
   `;
 
 const StartScreen = () => {
 
     return (
       <StartDiv>  
-        <div>
-        <img src={Sparkles} style={styleSparkles} />     
-        </div>
         <SvgDiv>
             <img src={DonutDust} alt={DonutDust} style={styleDonutDust}></img>
             <img src={DonutTrueBlood} alt={DonutTrueBlood} style={styleDonutTrueBlood}></img>
         </SvgDiv>
         <Title smallText="THE" bigText="DONUT SHOP" style={styleTitle}/>
-        <StartButton>START</StartButton>
+        <StartButton>Start</StartButton>
       </StartDiv>
     );
   };
