@@ -73,7 +73,6 @@ const styleDonutDust ={
 
 
 const StartScreen = ({ handleClick }) => {
-   // const [currentScreen, setCurrentScreen] = useState('start');
   
     return (
       <StartDiv>  
@@ -88,50 +87,3 @@ const StartScreen = ({ handleClick }) => {
   };
   
   export {StartScreen};
-
-  /*
-  import React, { useState } from 'react';
-
-const StartScreen = () => {
-  const [screen, setScreen] = useState('start');
-
-  const handleClick = () => {
-    setScreen('menu');
-  }
-
-  return (
-    <div>
-      {screen === 'start' && (
-        <div>
-          <h1>Start Screen</h1>
-          <button onClick={handleClick}>Start</button>
-        </div>
-      )}
-      {screen === 'menu' && (
-        <div>
-          <h1>Menu Screen</h1>
-        </div>
-      )}
-    </div>
-  );
-}
-
-export default StartScreen;
-
-  */ 
-
-  /* 
-  import { Link } from 'react-router-dom';
-
-function StartScreen() {
-  return (
-    <div>
-      <h1>Start Screen</h1>
-      <Link to="/menu">
-        <button>Start</button>
-      </Link>
-    </div>
-  );
-}
-
-  */

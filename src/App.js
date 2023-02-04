@@ -4,7 +4,9 @@ import {useState, useEffect} from 'react';
 import styled from "styled-components";
 import {StartScreen} from './components/StartScreen';
 import { MenuScreen } from "./components/MenuScreen";
-
+import {PaymentScreen} from './components/PaymentScreen';
+import {PreparationScreen} from './components/PreparationScreen'
+import {ReadyScreen} from './components/ReadyScreen'
 
 const MainDiv = styled.div`
   background-color: lightblue;
@@ -19,99 +21,41 @@ const MainDiv = styled.div`
 
 function App() {
   const [screen, setScreen] = useState('start');
+  const [selectedDonut, setSelectedDonut] = useState(null); 
+  const [showReadyScreen, setShowReadyScreen] = useState(false);
 
   const handleClick = () => {
     setScreen('menu');
   };
+  
+  const onSelectDonut = (donut) => {
+    setScreen('payment');
+    setSelectedDonut(donut);
+  };
+
+  const payClick = () => {
+    setScreen('preparation');
+   
+  };
+
+  useEffect(() => {
+    if (screen === 'preparation') {
+      setTimeout(() => {
+        setShowReadyScreen(true);
+      }, 5000);
+    }
+  }, [screen]);
 
   return (
     <MainDiv>
       {screen === 'start' && <StartScreen handleClick={handleClick} />}
-      {screen === 'menu' && <MenuScreen/>}
+      {screen === 'menu' && <MenuScreen onSelectDonut={onSelectDonut}/> }
+      {screen === 'payment' && <PaymentScreen payClick={payClick}/>}
+      {screen === 'preparation' && <PreparationScreen donut={selectedDonut}/>}
+      {showReadyScreen && <ReadyScreen donut={selectedDonut}/>}
+
     </MainDiv>
   );
 }
 
-
-
-/*
-const App = () => {
-  const [currentScreen, setCurrentScreen] = useState("start");
-  const [selectedDonut, setSelectedDonut] = useState(null);
-
-  const showScreen = () => {
-    switch (currentScreen) {
-      case "start":
-        //setCurrentScreen("menu");
-        return <StartScreen />;
-      case "menu":
-        return (
-          <MenuScreen
-            onSelectDonut={flavor => {
-              setSelectedDonut(flavor);
-              setCurrentScreen("payment");
-            }}
-          />
-        );
-      /*case "payment":
-        return (
-          <PaymentScreen
-            selectedDonut={selectedDonut}
-            onPaymentSuccess={() => {
-              setCurrentScreen("preparation");
-            }}
-          />
-        );
-      case "preparation":
-        return <PreparationScreen selectedDonut={selectedDonut} />;
-      case "ready":
-        return <ReadyScreen selectedDonut={selectedDonut} />;*/
-/*      default:
-        return null;
-    }
-  };
-
-  return <MainDiv>{showScreen()}</MainDiv>;
-};*/
-
 export default App;
-
-
-/*
-import React, { useState } from 'react';
-
-const StartMenu = ({ handleClick }) => {
-  return (
-    <div>
-      <h1>Start Menu</h1>
-      <button onClick={handleClick}>Go to Menu</button>
-    </div>
-  );
-};
-
-const NextMenu = () => {
-  return (
-    <div>
-      <h1>Next Menu</h1>
-    </div>
-  );
-};
-
-function App() {
-  const [screen, setScreen] = useState('start');
-
-  const handleClick = () => {
-    setScreen('menu');
-  };
-
-  return (
-    <div>
-      {screen === 'start' && <StartMenu handleClick={handleClick} />}
-      {screen === 'menu' && <NextMenu />}
-    </div>
-  );
-}
-
-export default App;
-
-*/ 

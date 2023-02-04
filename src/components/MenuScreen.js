@@ -15,11 +15,8 @@ const Menu = styled.div`
     margin-top: -25%;
 `;
 
-
-
 const MenuScreen = ({ onSelectDonut }) => {
-  const flavors = ["DonutDust", "DonutTrueBlood", "DonutMarbleMagic",'DonutSkyShaoed'];
-    const donuts=[{name:'SKY SHAPED', image:DonutDust}, {name:'MARBLE MAGIC', image:DonutMarbleMagic},
+    const donuts=[{name:'SKY SHAPED', image:DonutSkyShaoed}, {name:'MARBLE MAGIC', image:DonutMarbleMagic},
     {name:'TRUE BLOOD', image:DonutTrueBlood },{name:'UNICORN DUST', image:DonutDust}]
   
   return (
@@ -27,11 +24,11 @@ const MenuScreen = ({ onSelectDonut }) => {
         <div style={{paddingTop: '50px'}}> 
       <Title smallText="THE" bigText="MENU" />
       </div>
-      <div>
         {donuts.map(donut => (
-        <Donut image={donut.image} src={donut.image} name={donut.name} onClick={() => onSelectDonut(donut)} />
+        <div onClick={() => onSelectDonut(donut)} >
+        <Donut key={donut.name} image={donut.image} src={donut.image} name={donut.name} />
+        </div>
       ))}
-      </div>
     </Menu>
   );
 };

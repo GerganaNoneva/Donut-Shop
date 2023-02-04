@@ -4,6 +4,7 @@ import "../fonts/static/Outfit-ExtraBold.ttf";
 const Title = ({ smallText, bigText }) => {
 
   const h1Style={
+    fontFamily: 'Outfit-bold', 
     color:'white',
     width:'70%',
     height:'auto',
@@ -14,18 +15,18 @@ const Title = ({ smallText, bigText }) => {
 
   const smallTextStyle = {
     fontSize: '32px',
-    fontFamily: 'Outfit-bold', 
     display: 'inline-block',
     width:'100%',
     marginTop: '0',
     padding: '0',
     textAlign:'right',
+    wordWrap: 'break-all',
   };
   const bigTextStyle = {
     fontSize: '70px',
     display: 'flex',
     width:'100%',
-    fontFamily: 'Outfit-bold', 
+
     overflow: 'hidden',
     wordWrap: 'break-all',
     textAlign:'center',
@@ -34,8 +35,6 @@ const Title = ({ smallText, bigText }) => {
     alignItems: 'center',
     textJustify: 'auto'
   };
-
-
 
   return (
     <h1 style={h1Style}>
