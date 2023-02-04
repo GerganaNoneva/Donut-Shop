@@ -2,12 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import DonutDust from '../assets/unicorn_dust.svg';
 import DonutTrueBlood from '../assets/true_blood.svg';
-import Sparkles from '../assets/sparkles.svg';
 import { Title } from './Title';
-import { MenuScreen } from './MenuScreen';
-import { useState } from 'react';
-
-
 
 const StartDiv = styled.div`
     width: 100%;
@@ -32,9 +27,7 @@ const styleDonutDust ={
     width: '50%',
     height: 'auto',
     objectFit: 'cover',
-    objectPosition: 'bottom 30px right 30px',
-   /* marginTop: '-10%',
-    marginLeft: '-10%'*/
+    objectPosition: 'bottom 30px right 30px'
   };
 
   const styleDonutTrueBlood={
@@ -44,16 +37,6 @@ const styleDonutDust ={
     objectFit: 'cover',
     objectPosition: 'top 0 left 15px'
   };
-
-  const styleSparkles={
-    width: '500px',
-    height:'auto',
-    position: 'absolute',
-    marginTop: '-50%',
-    marginLeft: '15%',
-    objectFit: 'cover',
-    objectPosition: 'top 0 left 50px'
-  }
 
   const styleTitle = {
     alignItems:'center',

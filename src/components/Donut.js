@@ -1,6 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
-
 
 const styleDiv= {  
     width:'100%',
@@ -30,19 +28,6 @@ const styleSvg ={
     animation: 'rotation 5s linear infinite'
 }
 
-const imgSvg = styled.img`
-  width: 100%;
-  height: auto;
-  animation: rotation 5s linear infinite;
-  @keyframes rotation {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-`;
 
 const Donut = ({ image , name}) => {
   return (

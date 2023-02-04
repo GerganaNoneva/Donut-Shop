@@ -26,9 +26,9 @@ align-items: 'center'
 `;
 
 
+const PaymentScreen = ({payClick}) => {
 
-const PaymentScreen = ({payClick}) => (
-
+    return (
     <PaymentDiv>
         <Title smallText="PAY US" bigText="NOW" style={{textAlign: 'right'}}/>
         <Button onClick={payClick}>
@@ -38,9 +38,8 @@ const PaymentScreen = ({payClick}) => (
             <img src={GooglePay} alt='Google Pay'></img>
         </Button>
     </PaymentDiv>
-  );
+    )   
+};
 
-  export {PaymentScreen};
+export {PaymentScreen};
 
-  /*
-  { selectedDonut, onPaymentSuccess }*/ 

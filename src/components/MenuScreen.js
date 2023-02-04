@@ -1,6 +1,5 @@
 import React from 'react';
 import {Title} from './Title';
-import {useState, useEffect} from 'react';
 import {Donut} from './Donut'
 import styled from 'styled-components';
 import DonutDust from '../assets/unicorn_dust.svg';

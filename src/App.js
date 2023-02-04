@@ -42,9 +42,14 @@ function App() {
     if (screen === 'preparation') {
       setTimeout(() => {
         setShowReadyScreen(true);
+        setScreen('ready');
       }, 5000);
     }
   }, [screen]);
+
+  const doneClick = () => {
+    setScreen('start');
+  }; 
 
   return (
     <MainDiv>
@@ -52,7 +57,7 @@ function App() {
       {screen === 'menu' && <MenuScreen onSelectDonut={onSelectDonut}/> }
       {screen === 'payment' && <PaymentScreen payClick={payClick}/>}
       {screen === 'preparation' && <PreparationScreen donut={selectedDonut}/>}
-      {showReadyScreen && <ReadyScreen donut={selectedDonut}/>}
+      {showReadyScreen && <ReadyScreen donut={selectedDonut} doneClick={doneClick} />}
 
     </MainDiv>
   );

@@ -1,12 +1,4 @@
 import React from "react";
-import styled from "styled-components";
-import DonutDust from '../assets/unicorn_dust.svg';
-import DonutTrueBlood from '../assets/true_blood.svg';
-import DonutMarbleMagic from '../assets/marble_magic.svg';
-import DonutSkyShaoed from '../assets/sky_shaped.svg';
-import {useState, useEffect} from 'react';
-
-
 
 const styleDiv = {
     backgroundColor: '#FFE84A',
@@ -39,6 +31,5 @@ const PreparationScreen = ({donut}) => {
         <h1 style={h1Style}>Preparing</h1>
         </div>
     )
-       
 }
 export {PreparationScreen};
