@@ -4,6 +4,9 @@ import DonutDust from '../assets/unicorn_dust.svg';
 import DonutTrueBlood from '../assets/true_blood.svg';
 import Sparkles from '../assets/sparkles.svg';
 import { Title } from './Title';
+import { MenuScreen } from './MenuScreen';
+import { useState } from 'react';
+
 
 
 const StartDiv = styled.div`
@@ -28,8 +31,10 @@ const SvgDiv = styled.div`
 const styleDonutDust ={
     width: '50%',
     height: 'auto',
-    marginTop: '-10%',
-    marginLeft: '-10%'
+    objectFit: 'cover',
+    objectPosition: 'bottom 30px right 30px',
+   /* marginTop: '-10%',
+    marginLeft: '-10%'*/
   };
 
   const styleDonutTrueBlood={
@@ -66,8 +71,10 @@ const styleDonutDust ={
   margin-top: -10%;
   `;
 
-const StartScreen = () => {
 
+const StartScreen = ({ handleClick }) => {
+   // const [currentScreen, setCurrentScreen] = useState('start');
+  
     return (
       <StartDiv>  
         <SvgDiv>
@@ -75,9 +82,56 @@ const StartScreen = () => {
             <img src={DonutTrueBlood} alt={DonutTrueBlood} style={styleDonutTrueBlood}></img>
         </SvgDiv>
         <Title smallText="THE" bigText="DONUT SHOP" style={styleTitle}/>
-        <StartButton>Start</StartButton>
+        <StartButton onClick={handleClick}>Start</StartButton>
       </StartDiv>
     );
   };
   
   export {StartScreen};
+
+  /*
+  import React, { useState } from 'react';
+
+const StartScreen = () => {
+  const [screen, setScreen] = useState('start');
+
+  const handleClick = () => {
+    setScreen('menu');
+  }
+
+  return (
+    <div>
+      {screen === 'start' && (
+        <div>
+          <h1>Start Screen</h1>
+          <button onClick={handleClick}>Start</button>
+        </div>
+      )}
+      {screen === 'menu' && (
+        <div>
+          <h1>Menu Screen</h1>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default StartScreen;
+
+  */ 
+
+  /* 
+  import { Link } from 'react-router-dom';
+
+function StartScreen() {
+  return (
+    <div>
+      <h1>Start Screen</h1>
+      <Link to="/menu">
+        <button>Start</button>
+      </Link>
+    </div>
+  );
+}
+
+  */
