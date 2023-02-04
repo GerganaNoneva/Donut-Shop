@@ -25,10 +25,10 @@ function App() {
   };
 
   return (
-    <div>
+    <MainDiv>
       {screen === 'start' && <StartScreen handleClick={handleClick} />}
       {screen === 'menu' && <MenuScreen/>}
-    </div>
+    </MainDiv>
   );
 }
 
