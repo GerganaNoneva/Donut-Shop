@@ -4,3 +4,10 @@
   justify-content: center;
   height: 100vh;
 }
+
+@font-face {
+  font-family: 'Outfit-bold';
+  src: url('./fonts/static/Outfit-ExtraBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
